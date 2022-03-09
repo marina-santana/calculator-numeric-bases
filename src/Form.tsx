@@ -13,8 +13,8 @@ const Form: React.FC = () => {
   });
 
   return (
-    <div className="w-full max-w-sm ">
-      <form className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+    <>
+      <form className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 max-w-lg w-full">
         <div className="flex mb-4">
           <div className="md:w-1/3">
             <label className="block text-gray-800 font-bold md:text-right mb-1 md:mb-0 pr-4" htmlFor="inline-full-name">
@@ -79,7 +79,7 @@ const Form: React.FC = () => {
       <p className="text-center text-gray-500 text-xs">
         &copy;2022 Marina Santana. GitHub: marina-santana.
       </p>
-    </div>
+    </>
   );
 }
 

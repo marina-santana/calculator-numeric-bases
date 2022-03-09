@@ -3,6 +3,7 @@ import { convertBinaryToDecimal, convertBinaryToHexadecimal, convertBinaryToOcta
 import { convertDecimalToBinary, convertDecimalToHexadecimal, convertDecimalToOctal } from "./decimal"
 import { convertHexadecimalToBinary, convertHexadecimalToDecimal, convertHexadecimalToOctal } from "./hexadecimal"
 import { convertOctalToBinary, convertOctalToDecimal, convertOctalToHexadecimal } from "./octal"
+import { resultIsValid } from "./validation"
 
 export const handleChangeDecimal = (decimal: string, dispatchFn: React.Dispatch<React.SetStateAction<NumericBases>>) => {
   const binary = convertDecimalToBinary(decimal)
@@ -10,10 +11,10 @@ export const handleChangeDecimal = (decimal: string, dispatchFn: React.Dispatch<
   const hexadecimal = convertDecimalToHexadecimal(decimal)
 
   const numericTypes = {
-    binary,
+    binary: resultIsValid(binary),
     decimal,
-    octal,
-    hexadecimal
+    octal: resultIsValid(octal),
+    hexadecimal: resultIsValid(hexadecimal),
   }
 
   dispatchFn(numericTypes)
@@ -26,9 +27,9 @@ export const handleChangeBinary = (binary: string, dispatchFn: React.Dispatch<Re
 
   const numericTypes = {
     binary,
-    decimal,
-    octal,
-    hexadecimal
+    decimal: resultIsValid(decimal),
+    octal: resultIsValid(octal),
+    hexadecimal: resultIsValid(hexadecimal),
   }
 
   dispatchFn(numericTypes)
@@ -40,9 +41,9 @@ export const handleChangeHexadecimal = (hexadecimal: string, dispatchFn: React.D
   const binary = convertHexadecimalToBinary(hexadecimal)
 
   const numericTypes = {
-    binary,
-    decimal,
-    octal,
+    binary: resultIsValid(binary),
+    decimal: resultIsValid(decimal),
+    octal: resultIsValid(octal),
     hexadecimal
   }
 
@@ -55,10 +56,10 @@ export const handleChangeOctal = (octal: string, dispatchFn: React.Dispatch<Reac
   const binary = convertOctalToBinary(octal)
 
   const numericTypes = {
-    binary,
-    decimal,
+    binary: resultIsValid(binary),
+    decimal: resultIsValid(decimal),
     octal,
-    hexadecimal
+    hexadecimal: resultIsValid(hexadecimal),
   }
 
   dispatchFn(numericTypes)

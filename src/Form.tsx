@@ -13,7 +13,6 @@ const Form: React.FC = () => {
   });
 
   return (
-    <>
       <form className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 max-w-lg w-full">
         <div className="flex mb-4">
           <div className="md:w-1/3">
@@ -76,10 +75,6 @@ const Form: React.FC = () => {
           </div>
         </div>
       </form>
-      <p className="text-center text-gray-500 text-xs">
-        &copy;2022 Marina Santana. GitHub: marina-santana.
-      </p>
-    </>
   );
 }
 
